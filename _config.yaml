@@ -4,3 +4,4 @@ url: "https://randrewfox.github.io"
 author: "andrew"
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+future: true
