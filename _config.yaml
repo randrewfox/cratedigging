@@ -1,6 +1,7 @@
 title: "cratedigg.ing"
 description: "a place for things"
 url: "https://randrewfox.github.io"
+baseurl: "/cratedigging"
 author: "andrew"
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
