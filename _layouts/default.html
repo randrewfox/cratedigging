@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --link: #0044cc;
+      --muted: #666666;
+      --border: #e5e5e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --text: #e0e0e0;
+        --link: #66b2ff;
+        --muted: #999999;
+        --border: #2a2a2a;
+      }
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+      line-height: 1.65;
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 2rem auto;
+      padding: 0 1.2rem;
+    }
+    header, footer {
+      margin-bottom: 2.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    header p {
+      margin: 0.2rem 0 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin-right: 1rem;
+    }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    ul.post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.post-list li {
+      margin-bottom: 1.2rem;
+    }
+    time {
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: inline-block;
+      width: 110px;
+      font-family: monospace;
+    }
+    article header {
+      margin-bottom: 1.5rem;
+    }
+    article header h1 {
+      margin-bottom: 0.3rem;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/" style="color: inherit; text-decoration: none;">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <hr>
+    <p style="color: var(--muted); font-size: 0.85rem;">© {{ 'now' | date: "%Y" }} {{ site.author }}</p>
+  </footer>
+</body>
+</html>
